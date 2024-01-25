@@ -1,0 +1,60 @@
+{% load static %}
+
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>{% block title %}VayForum{% endblock %}</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/bootswatch/4.3.1/flatly/bootstrap.min.css" rel="stylesheet"></head>
+    <!-- Link to your custom CSS file -->
+    <link rel ="stylesheet" href="{% static 'css/style.css' %}" type="text/css">
+<body>
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <a class="navbar-brand" href="#">VayForum</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav">
+                <li class="nav-item active">
+                    <a class="nav-link" href="{% url 'home' %}">HOME <span class="sr-only">(current)</span></a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="{% url 'forum' %}">FORUM</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="{% url 'chat' %}">CHAT</a>
+                </li>
+                <!-- Other fields here -->
+            </ul>
+
+            <ul class="navbar-nav ml-auto">
+               
+                    <li class="nav-item">
+                        <a class="nav-link" href="{% url 'login' %}">LOGIN</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="{% url 'register' %}">REGISTER</a>
+                    </li>
+            </ul>
+            
+        </div>
+    </nav>
+
+    <main>
+        {% block content %}
+        <!-- Default content or empty -->
+        {% endblock %}
+    </main>
+
+    <footer>
+        <p>© 2024 VayForum</p>
+    </footer>
+
+    <!-- Optional Bootstrap JavaScript -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.3/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+</body>
+</html>
